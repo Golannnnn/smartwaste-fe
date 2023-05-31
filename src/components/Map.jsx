@@ -34,7 +34,7 @@ const Map = () => {
 
   return (
     <Center m={5} display="flex" flexDirection="column">
-      <Heading as="h1" size="2xl" mb={5}>
+      <Heading as="h1" size="2xl" mb={7}>
         Map
       </Heading>
       <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_KEY}>

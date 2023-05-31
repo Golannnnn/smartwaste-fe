@@ -1,0 +1,15 @@
+label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.8rem 0;
+  font-size: 1.3rem;
+}
+
+.formInput .icon {
+  font-size: 1.3rem;
+}
+
+span {
+  font-weight: bold;
+}
