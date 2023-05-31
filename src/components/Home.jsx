@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaFolder } from "react-icons/fa";
-import { Container, Button, Text, Heading } from "@chakra-ui/react";
+import { Button, Text, Heading, Box, Center } from "@chakra-ui/react";
+import "../index.css"
 
 const Home = () => {
   const [file, setFile] = useState("");
@@ -10,52 +11,46 @@ const Home = () => {
   };
 
   return (
-    <Container
-      maxW="m"
-      bg="#024731"
-      color="#fff"
-      h="330px"
-      py="10px"
-      position="relative"
-    >
-      <Text>
-        <Heading size="lg" py="20px">
-          Upload, Learn, Locate, Recycle.
-        </Heading>
-        <Text>
-          Join the recycling revolution with SmartWaste and make a positive
-          impact on your environment and future.
-        </Text>
+    <Center display="flex" flexDirection="column" bg="#024731" color="#fff">
+      <Heading px="10px" py="30px">
+        Upload, Learn, Locate, Recycle.
+      </Heading>
+      <Text px="20px" pb="15px">
+        Join the recycling revolution with SmartWaste and make a positive impact
+        on your environment and future.
       </Text>
-      <Container
+      <Box
         bg="#f8f8f2"
-        color="#024731"
-        py="15px"
-        mt="26px"
         borderRadius="22px"
-        fontWeight="bold"
+        color="#333"
+        minWidth="80%"
+        h="auto"
+        p="15px"
+        m="15px"
+        textAlign="left"
       >
         <form>
-          <label htmlFor="file">
-            Upload your photo:{" "}
-            <FaFolder className="icon" style={{ cursor: "pointer" }} />
-          </label>
-          <Text>
-            upload a photo of the recycled item for identification and to find
+          <div className="formInput">
+            <label htmlFor="file">
+              Upload your photo: <FaFolder className="icon" style={{ cursor: "pointer" }} />
+            </label>
+            <input
+              type="file"
+              id="file"
+              onChange={(e) => setFile(e.target.files[0])}
+              style={{ display: "none" }}
+            />
+          </div>
+          <Text pb="15px">
+            Upload a photo of the recycled item for identification and to find
             the nearest recycling pin.
           </Text>
-          <input
-            type="file"
-            id="file"
-            onChange={(e) => setFile(e.target.files[0])}
-            style={{ display: "none" }}
-          />
-          <Button onClick={handleUpdate} colorScheme="blue">
+          <Button onClick={handleUpdate} colorScheme="green">
             Upload
           </Button>
         </form>
-      </Container>
-    </Container>
+      </Box>
+    </Center>
   );
 };
 
