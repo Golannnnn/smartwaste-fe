@@ -1,3 +1,7 @@
+.green-body {
+  background-color: #024731;
+}
+
 label {
   display: flex;
   align-items: center;

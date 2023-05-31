@@ -81,7 +81,7 @@ const Home = () => {
         bg="#f8f8f2"
         borderRadius="22px"
         color="#333"
-        minWidth="80%"
+        maxWidth="500px"
         h="auto"
         p="15px"
         m="15px"
