@@ -1,5 +1,4 @@
 import { Flex, Image, Text } from "@chakra-ui/react";
-import logoPng from "../assets/smartwaste_logo.png";
 import logoSvg from "../assets/smartwaste_logo.svg";
 import Menu from "./Menu";
 import { TbLocationFilled } from "react-icons/tb";
