@@ -17,18 +17,22 @@ const Rules = () => {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
+      slideToSlide: 5,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 3,
+      slideToSlide: 3,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
       items: 2,
+      slideToSlide: 2,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 1,
+      slideToSlide: 1,
     },
   };
 
@@ -37,7 +41,25 @@ const Rules = () => {
       <Heading display="flex" justifyContent="center" my="2">
         Rules
       </Heading>
-      <Carousel responsive={responsive}>
+      <Carousel
+        swipeable={true}
+        draggable={true}
+        showDots={true}
+        responsive={responsive}
+        ssr={true}
+        keyBoardControl={true}
+        customTransition="all .10"
+        transitionDuration={500}
+        removeArrowOnDeviceType={[
+          "tablet",
+          "mobile",
+          "desktop",
+          "superLargeDesktop",
+        ]}
+        dotListClass="custom-dot-list-style"
+        itemClass="carousel-item-padding-50-px"
+        containerClass="carousel-with-custom-dots"
+      >
         {/* card 1 */}
         <Card
           bg="orange"

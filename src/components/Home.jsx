@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { FaFolder } from "react-icons/fa";
-import { Button, Text, Heading, Box, Center } from "@chakra-ui/react";
+import { FaCamera } from "react-icons/fa";
+import { Button, Text, Heading, Box, Center, Container } from "@chakra-ui/react";
 import "../index.css"
 
 const Home = () => {
@@ -32,7 +32,7 @@ const Home = () => {
         <form>
           <div className="formInput">
             <label htmlFor="file">
-              Upload your photo: <FaFolder className="icon" style={{ cursor: "pointer" }} />
+              Upload your photo: <FaCamera className="icon" style={{ cursor: "pointer" }} />
             </label>
             <input
               type="file"

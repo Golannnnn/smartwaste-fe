@@ -3,6 +3,7 @@ import logoSvg from "../assets/smartwaste_logo.svg";
 import Menu from "./Menu";
 import { TbLocationFilled } from "react-icons/tb";
 
+
 const Navbar = () => {
   const city = "Tel Aviv, Israel";
   return (

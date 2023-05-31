@@ -1,3 +1,7 @@
+.green-body {
+  background-color: #024731;
+}
+
 label {
   display: flex;
   align-items: center;
@@ -7,9 +11,17 @@ label {
 }
 
 .formInput .icon {
-  font-size: 1.3rem;
+  font-size: 1.7rem;
 }
 
 span {
   font-weight: bold;
+}
+
+.main-container {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid red;
 }
