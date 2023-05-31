@@ -1,4 +1,4 @@
-import { Heading, Center, Text, Flex, Image } from "@chakra-ui/react";
+import { Heading, Center, Text, Flex, Image, Box } from "@chakra-ui/react";
 import bg from "../assets/about_bg.jpg";
 
 const About = () => {
@@ -7,7 +7,6 @@ const About = () => {
       display="flex"
       flexDirection="column"
       alignItems="flex-start"
-      bg="#f8f8f2"
     >
       <Flex
         align="center"
@@ -27,6 +26,8 @@ const About = () => {
           bg="linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%)"
           pb={10}
           pt={5}
+          borderRadius="22px"
+          m="25px"
         >
           About us
         </Heading>
@@ -37,48 +38,74 @@ const About = () => {
           h="200px"
           w="100%"
           mb={5}
+          borderRadius="22px"
+          m="25px"
         />
       </Flex>
-      <Text fontSize="xl" fontWeight="bold" mb={5} mx={5} color="gray.700">
+      <Text fontSize="2xl" fontWeight="bold" mb={5} mx={5} color="#f8f8f2">
         "Making the world a cleaner place"
       </Text>
-      <Text
-        fontSize="2xl"
+      <Box
+        bg="#f8f8f2"
+        borderRadius="22px"
+        color="#333"
+        maxWidth="100%"
+        h="auto"
+        px="15px"
+        py="25px"
+        m="15px"
         textAlign="left"
-        fontWeight="bold"
-        mx={5}
-        borderBottom="5px solid #70a116"
-        pr={5}
-        mb={1}
       >
-        Our motivation
-      </Text>
-      <Text fontSize="lg" mb={5} mx={5} color="gray.700">
-        We are dedicated to making the world a cleaner place. We believe that
-        recycling is the key to a cleaner world and spreading awareness is the
-        first step. We want to make recycling accessible to everyone and make it
-        easy to recycle.
-      </Text>
-      <Text
-        fontSize="2xl"
+        <Text
+          fontSize="2xl"
+          textAlign="left"
+          fontWeight="bold"
+          mx={5}
+          borderBottom="5px solid #70a116"
+          pr={5}
+          mb={1}
+        >
+          Our motivation
+        </Text>
+        <Text fontSize="lg" mb={5} mx={5} color="gray.700" pt="10px">
+          We are dedicated to making the world a cleaner place. We believe that
+          recycling is the key to a cleaner world and spreading awareness is the
+          first step. We want to make recycling accessible to everyone and make
+          it easy to recycle.
+        </Text>
+      </Box>
+      <Box
+        bg="#f8f8f2"
+        borderRadius="22px"
+        color="#333"
+        maxWidth="100%"
+        h="auto"
+        px="15px"
+        py="25px"
+        m="15px"
         textAlign="left"
-        fontWeight="bold"
-        mx={5}
-        borderBottom="5px solid #70a116"
-        pr={5}
-        mb={1}
+        mb="35px"
       >
-        Our solution
-      </Text>
-      <Text fontSize="lg" mb={5} mx={5} color="gray.700">
-        We use a machine learning model to identify your waste, give you
-        localized information about recycling, the local rules about how and
-        where to recycle and guide you to the nearest recycling center.
-      </Text>
+        <Text
+          fontSize="2xl"
+          textAlign="left"
+          fontWeight="bold"
+          mx={5}
+          borderBottom="5px solid #70a116"
+          pr={5}
+          mb={1}
+        >
+          Our solution
+        </Text>
+        <Text fontSize="lg" mb={5} mx={5} color="gray.700" pt="10px">
+          We use a machine learning model to identify your waste, give you
+          localized information about recycling, the local rules about how and
+          where to recycle and guide you to the nearest recycling center.
+        </Text>
+      </Box>
     </Center>
   );
 };
 
-// #70a116
 
 export default About;
