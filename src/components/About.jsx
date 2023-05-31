@@ -3,7 +3,12 @@ import bg from "../assets/about_bg.jpg";
 
 const About = () => {
   return (
-    <Center display="flex" flexDirection="column" alignItems="flex-start">
+    <Center
+      display="flex"
+      flexDirection="column"
+      alignItems="flex-start"
+      bg="#f8f8f2"
+    >
       <Flex
         align="center"
         justify="center"
