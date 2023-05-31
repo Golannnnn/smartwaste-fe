@@ -1,16 +1,16 @@
 import Map from "./components/Map";
 import Results from "./components/Results";
-import Home from "./componenets/Home";
-import Navbar from "./componenets/Navbar";
-import Rules from "./componenets/Rules";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
+import Rules from "./components/Rules";
 
 function App() {
   return (
     <div>
-      <Results />
-      <Map />
       <Navbar />
       <Home />
+      <Results />
+      <Map />
       <Rules />
     </div>
   );
