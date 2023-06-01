@@ -14,7 +14,6 @@ import {
 import "../index.css";
 import axios from "axios";
 
-
 const Home = ({ handleResult }) => {
   const [loading, setLoading] = useState(false);
   const [file, setFile] = useState(null);
@@ -55,11 +54,15 @@ const Home = ({ handleResult }) => {
   const uploadPicture = async (form) => {
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:3001/bins/upload", form, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const res = await axios.post(
+        "https://fs-pet-adoption-be-golannnnn.vercel.app/bins/upload",
+        form,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       console.log(res.data.data.results);
       handleResult(res.data.data.results);
     } catch (error) {
@@ -86,7 +89,7 @@ const Home = ({ handleResult }) => {
         Join the recycling revolution with SmartWaste and make a positive impact
         on your environment and future.
       </Text>
-      
+
       <span id="upload"></span>
       <Box
         bg="#f8f8f2"
