@@ -117,7 +117,7 @@ const Map = ({ result }) => {
                       }}
                       icon={{
                         url:
-                          bin.type === "glass"
+                          bin.type === "Glass"
                             ? purpleBin
                             : bin.type === "Compost" && greenBin,
                         scaledSize: { width: 45, height: 45 },
