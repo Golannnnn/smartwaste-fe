@@ -13,7 +13,13 @@ const About = () => {
   const isLargeScreen = useBreakpointValue({ base: false, lg: true });
 
   return (
-    <Center display="flex" flexDirection="column" alignItems="center" pt={3}>
+    <Center
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      pt={3}
+      id="about"
+    >
       <Flex
         align="center"
         justify="center"
