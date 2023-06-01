@@ -17,3 +17,11 @@ label {
 span {
   font-weight: bold;
 }
+
+.textAnimation {
+  display: flex;
+  flex-direction: start;
+  justify-content: flex-start;
+
+
+}
