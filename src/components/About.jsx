@@ -119,9 +119,9 @@ const About = () => {
           Our solution
         </Text>
         <Text fontSize="lg" mb={5} mx={5} color="gray.700" pt="10px">
-          We use a machine learning model to identify your waste, give you
-          localized information about recycling, the local rules about how and
-          where to recycle and guide you to the nearest recycling center.
+          We use a machine learning model to classify your waste, tell you how
+          and where to recycle, guide you to the nearest recycling center and
+          give you information about the local recycling rules.
         </Text>
       </Box>
     </Center>
