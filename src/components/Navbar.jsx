@@ -10,6 +10,7 @@ const Navbar = () => {
       id="home"
       style={{
         marginLeft: "-7px",
+        paddingTop: "5px",
       }}
     >
       <Flex bg="#024731" color="#fff" align="center" justify="space-between">

@@ -26,15 +26,32 @@ const Map = ({ result }) => {
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
-        setMyLocation({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        });
+        if (isInTelAviv(position.coords.latitude, position.coords.longitude)) {
+          setMyLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
+        }
       });
     } else {
       console.log("Geolocation is not supported for this Browser/OS.");
     }
   }, []);
+
+  function isInTelAviv(lat, lng) {
+    // Define the boundaries of Tel Aviv-Yafo
+    const minLat = 32.0467;
+    const maxLat = 32.1413;
+    const minLng = 34.7422;
+    const maxLng = 34.8406;
+
+    // Check if the latitude and longitude are within the boundaries
+    if (lat >= minLat && lat <= maxLat && lng >= minLng && lng <= maxLng) {
+      return true; // The coordinates are within Tel Aviv-Yafo
+    } else {
+      return false; // The coordinates are outside Tel Aviv-Yafo
+    }
+  }
 
   const mapStyles = {
     height: isLargeScreen ? "500px" : "400px",
