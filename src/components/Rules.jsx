@@ -76,7 +76,7 @@ const Rules = () => {
               max: 3000,
               min: 1024,
             },
-            items: 1,
+            items: 3,
           },
           mobile: {
             breakpoint: {
@@ -111,7 +111,7 @@ const Rules = () => {
         {/* card 1 */}
         <Card
           bg="white"
-          minHeight="320px"
+          minHeight="385px"
           borderRadius="10px"
           border="1px solid #ddd"
           // p="15px"

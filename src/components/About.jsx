@@ -1,7 +1,17 @@
-import { Heading, Center, Text, Flex, Image, Box } from "@chakra-ui/react";
+import {
+  Heading,
+  Center,
+  Text,
+  Flex,
+  Image,
+  Box,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import bg from "../assets/about_bg.jpg";
 
 const About = () => {
+  const isLargeScreen = useBreakpointValue({ base: false, lg: true });
+
   return (
     <Center display="flex" flexDirection="column" alignItems="center" pt={3}>
       <Flex
@@ -19,11 +29,12 @@ const About = () => {
           as="h1"
           size="2xl"
           mb={5}
-          bg="linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%)"
           pb={10}
           pt={5}
           borderRadius="10px"
           m="25px"
+          maxW="800px"
+          h={isLargeScreen ? "300px" : "200px"}
         >
           About us
         </Heading>
@@ -31,11 +42,12 @@ const About = () => {
           src={bg}
           alt="background"
           objectFit="fill"
-          h="200px"
           w="100%"
           mb={5}
           borderRadius="22px"
           m="25px"
+          maxW="800px"
+          h={isLargeScreen ? "300px" : "200px"}
         />
       </Flex>
       <Text
@@ -52,7 +64,7 @@ const About = () => {
         bg="#f8f8f2"
         borderRadius="10px"
         color="#333"
-        maxWidth="100%"
+        maxWidth="800px"
         h="auto"
         px="15px"
         py="25px"
@@ -81,7 +93,7 @@ const About = () => {
         bg="#f8f8f2"
         borderRadius="10px"
         color="#333"
-        maxWidth="100%"
+        maxWidth="800px"
         h="auto"
         px="15px"
         py="25px"
