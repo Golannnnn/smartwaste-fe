@@ -14,6 +14,7 @@ import orangeBin from "../assets/orangebin.png";
 import purpleBin from "../assets/purplebin.png";
 import textileBin from "../assets/textilebin.png";
 
+import Border from "./Border";
 const Map = ({ result }) => {
   const [myLocation, setMyLocation] = useState({
     // tel aviv is the default location
@@ -52,60 +53,67 @@ const Map = ({ result }) => {
     });
 
   return (
-    <Center pt={3} m={5} mx={1} display="flex" flexDirection="column">
-      <Heading as="h1" size="2xl" mb={7}>
-        Map
-      </Heading>
-      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_KEY}>
-        <GoogleMap mapContainerStyle={mapStyles} zoom={10} center={myLocation}>
-          <MarkerF position={myLocation} icon={myLocationIcon} />
-          {binLocations &&
-            binLocations.map((bin) => {
-              return (
-                <>
-                  <InfoBoxF
-                    position={{
-                      lat: bin.lat,
-                      lng: bin.lng,
-                    }}
-                    options={{
-                      closeBoxURL: ``,
-                      enableEventPropagation: true,
-                    }}
-                  >
-                    <div
-                      style={{
-                        background: `white`,
-                        border: `1px solid #ccc`,
-                        padding: 5,
-                        backgroundColor: "rgba(255, 255, 255, 0.8)",
-                        whiteSpace: "nowrap",
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
+    <>
+      <Center pt={3} m={5} mx={1} display="flex" flexDirection="column">
+        <Heading as="h1" size="2xl" mb={7}>
+          Map
+        </Heading>
+        <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_KEY}>
+          <GoogleMap
+            mapContainerStyle={mapStyles}
+            zoom={10}
+            center={myLocation}
+          >
+            <MarkerF position={myLocation} icon={myLocationIcon} />
+            {binLocations &&
+              binLocations.map((bin) => {
+                return (
+                  <>
+                    <InfoBoxF
+                      position={{
+                        lat: bin.lat,
+                        lng: bin.lng,
+                      }}
+                      options={{
+                        closeBoxURL: ``,
+                        enableEventPropagation: true,
                       }}
                     >
-                      <Text fontSize="13px">{bin.type}</Text>
-                    </div>
-                  </InfoBoxF>
-                  <MarkerF
-                    position={{
-                      lat: bin.lat,
-                      lng: bin.lng,
-                    }}
-                    icon={{
-                      url:
-                        bin.type === "glass"
-                          ? purpleBin
-                          : bin.type === "Compost" && greenBin,
-                      scaledSize: { width: 45, height: 45 },
-                    }}
-                  />
-                </>
-              );
-            })}
-        </GoogleMap>
-      </LoadScript>
-    </Center>
+                      <div
+                        style={{
+                          background: `white`,
+                          border: `1px solid #ccc`,
+                          padding: 5,
+                          backgroundColor: "rgba(255, 255, 255, 0.8)",
+                          whiteSpace: "nowrap",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                        }}
+                      >
+                        <Text fontSize="13px">{bin.type}</Text>
+                      </div>
+                    </InfoBoxF>
+                    <MarkerF
+                      position={{
+                        lat: bin.lat,
+                        lng: bin.lng,
+                      }}
+                      icon={{
+                        url:
+                          bin.type === "glass"
+                            ? purpleBin
+                            : bin.type === "Compost" && greenBin,
+                        scaledSize: { width: 45, height: 45 },
+                      }}
+                    />
+                  </>
+                );
+              })}
+          </GoogleMap>
+        </LoadScript>
+      </Center>
+      <Border />
+    </>
   );
 };
 

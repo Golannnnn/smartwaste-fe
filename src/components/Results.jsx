@@ -6,6 +6,7 @@ import greenBin from "../assets/greenbin.png";
 import orangeBin from "../assets/orangebin.png";
 import purpleBin from "../assets/purplebin.png";
 import textileBin from "../assets/textilebin.png";
+import Border from "./Border";
 
 const types = {
   compost: {
@@ -35,59 +36,62 @@ const Results = ({ result }) => {
   }, []);
 
   return (
-    <Center
-      pt={2}
-      m={5}
-      mx={2}
-      display="flex"
-      flexDirection="column"
-      id="result"
-      alignItems="center"
-      textAlign="center"
-    >
-      <Heading as="h1" size="2xl" mb={5}>
-        Results
-      </Heading>
-      <Box textAlign="center">
-        <Flex
-          alignItems="center"
-          justifyContent="center"
-          flexDirection="column"
-        >
-          <Image
-            src={
-              type === "Compost"
-                ? greenBin
-                : type === "Plastic"
-                ? blueBin
-                : type === "Paper"
-                ? purpleBin
-                : type === "Glass"
-                ? blackBin
-                : type === "Textile"
-                ? textileBin
-                : orangeBin
-            }
-          />
-          <Text fontSize="3xl">
-            <strong>{type}</strong>
-          </Text>
-        </Flex>
+    <>
+      <Center
+        pt={2}
+        m={5}
+        mx={2}
+        display="flex"
+        flexDirection="column"
+        id="result"
+        alignItems="center"
+        textAlign="center"
+      >
+        <Heading as="h1" size="2xl" mb={5}>
+          Results
+        </Heading>
+        <Box textAlign="center">
+          <Flex
+            alignItems="center"
+            justifyContent="center"
+            flexDirection="column"
+          >
+            <Image
+              src={
+                type === "Compost"
+                  ? greenBin
+                  : type === "Plastic"
+                  ? blueBin
+                  : type === "Paper"
+                  ? purpleBin
+                  : type === "Glass"
+                  ? blackBin
+                  : type === "Textile"
+                  ? textileBin
+                  : orangeBin
+              }
+            />
+            <Text fontSize="3xl">
+              <strong>{type}</strong>
+            </Text>
+          </Flex>
 
-        <Text mt={5} textAlign="left">
-          <strong>Facts</strong>
-        </Text>
-        <Text maxW={500} textAlign="left">
-          {fact}
-        </Text>
-        <Text mt={5} textAlign="left">
-          <strong>Recycling rules in {city}</strong>
-        </Text>
-        <Text textAlign="left" maxW={500}>
-          {rule}
-        </Text>
-      </Box>
-    </Center>
+          <Text mt={5} textAlign="left">
+            <strong>Facts</strong>
+          </Text>
+          <Text maxW={500} textAlign="left">
+            {fact}
+          </Text>
+          <Text mt={5} textAlign="left">
+            <strong>Recycling rules in {city}</strong>
+          </Text>
+          <Text textAlign="left" maxW={500}>
+            {rule}
+          </Text>
+        </Box>
+      </Center>
+      <Border />
+    </>
   );
 };
 
