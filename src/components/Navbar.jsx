@@ -10,6 +10,7 @@ const Navbar = () => {
       id="home"
       style={{
         marginLeft: "-7px",
+        paddingTop: "5px",
       }}
     >
       <Flex bg="#024731" color="#fff" align="center" justify="space-between">
@@ -24,7 +25,7 @@ const Navbar = () => {
             }}
           />
         </Flex>
-        <Flex align="center" gap={2} mr={1}>
+        <Flex align="center" gap={2} mr={3}>
           <TbLocationFilled />
           <Text fontSize="sm" fontWeight="bold">
             {city}

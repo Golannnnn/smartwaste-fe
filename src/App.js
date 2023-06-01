@@ -23,12 +23,12 @@ function App() {
   return (
     <>
       <div className="green-body">
-        <Container maxW="7xl">
-          <Navbar />
+        <Navbar />
+        <Container maxW="5xl">
           <Home handleResult={handleResult} result={result} />
         </Container>
       </div>
-      <Container maxW="7xl">
+      <Container maxW="5xl">
         {result && (
           <>
             <Results result={result} />

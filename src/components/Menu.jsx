@@ -77,7 +77,7 @@ const Menu = () => {
                   height: "30px",
                 }}
               />
-              <Link href="#about">
+              <Link href="#about" onClick={onClose}>
                 <Text fontWeight={600}>About</Text>
               </Link>
             </Flex>

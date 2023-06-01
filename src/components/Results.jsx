@@ -1,5 +1,11 @@
-import { Heading, Center, Text, Box } from "@chakra-ui/react";
+import { Flex, Heading, Center, Text, Box, Image } from "@chakra-ui/react";
 import { useEffect } from "react";
+import blackBin from "../assets/blackbin.png";
+import blueBin from "../assets/bluebin.png";
+import greenBin from "../assets/greenbin.png";
+import orangeBin from "../assets/orangebin.png";
+import purpleBin from "../assets/purplebin.png";
+import textileBin from "../assets/textilebin.png";
 import Border from "./Border";
 
 const types = {
@@ -38,25 +44,50 @@ const Results = ({ result }) => {
         display="flex"
         flexDirection="column"
         id="result"
-        mt="3rem"
-        mb="4rem"
+        alignItems="center"
+        textAlign="center"
       >
         <Heading as="h1" size="2xl" mb={5}>
           Results
         </Heading>
-        <Box textAlign="left">
-          <Text>
-            Your waste has been identified as <strong>{type}</strong>.
-          </Text>
+        <Box textAlign="center">
+          <Flex
+            alignItems="center"
+            justifyContent="center"
+            flexDirection="column"
+          >
+            <Image
+              src={
+                type === "Compost"
+                  ? greenBin
+                  : type === "Plastic"
+                  ? blueBin
+                  : type === "Paper"
+                  ? purpleBin
+                  : type === "Glass"
+                  ? blackBin
+                  : type === "Textile"
+                  ? textileBin
+                  : orangeBin
+              }
+            />
+            <Text fontSize="3xl">
+              <strong>{type}</strong>
+            </Text>
+          </Flex>
 
-          <Text mt={5}>
-            <strong>How does {type.toLowerCase()} harm the envoirment?</strong>
+          <Text mt={5} textAlign="left">
+            <strong>Facts</strong>
           </Text>
-          <Text>{fact}</Text>
-          <Text mt={5}>
+          <Text maxW={500} textAlign="left">
+            {fact}
+          </Text>
+          <Text mt={5} textAlign="left">
             <strong>Recycling rules in {city}</strong>
           </Text>
-          <Text>{rule}</Text>
+          <Text textAlign="left" maxW={500}>
+            {rule}
+          </Text>
         </Box>
       </Center>
       <Border />
