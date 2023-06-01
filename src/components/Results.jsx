@@ -11,21 +11,39 @@ import Border from "./Border";
 const types = {
   compost: {
     fact: [
-      "Plastic is a non-renewable resource that takes centuries to decompose. It is estimated that 8 million metric tons of plastic enter the ocean every year.",
+      "Organic recycling reducing greenhouse gas emissions and producing nutrient-rich soil amendments for gardening and agriculture..",
     ],
-    rule: "Plastic bottles and bags should be thrown in the yellow bin.",
+    rule: "Organic waste should be thrown in the green bin.",
   },
   plastic: {
     fact: [
       "Plastic is a non-renewable resource that takes centuries to decompose. It is estimated that 8 million metric tons of plastic enter the ocean every year.",
     ],
-    rule: "Plastic bottles and bags should be thrown in the yellow bin.",
+    rule: "Plastic bottles and bags should be thrown in the orange bin.",
   },
   glass: {
     fact: [
       "Glass is 100% recyclable and can be recycled endlessly without loss in quality or purity.",
     ],
-    rule: "Glass bottles and jars should be thrown in the black bin.",
+    rule: "Glass bottles and jars should be thrown in the purple bin.",
+  },
+  carton: {
+    fact: [
+      "Carton is a recyclable material that is used for packaging of a wide range of food and beverage products.",
+    ],
+    rule: "Carton should be thrown in the blue bin.",
+  },
+  packages: {
+    fact: [
+      "Recycling one ton of cardboard saves 9 cubic yards of landfill space and 46 gallons of oil.",
+    ],
+    rule: "Any  packages such as beverage cartoon and plastic should be thrown in the orange pin.",
+  },
+  paper: {
+    fact: [
+      "Recycling one ton of paper saves 3.3 cubic yards of landfill space and 17 trees from being cut down.",
+    ],
+    rule: "Any paper, newspaper and thing card boards should be thrown in the blue bin.",
   },
 };
 
@@ -67,11 +85,13 @@ const Results = ({ result }) => {
                 type === "Compost"
                   ? greenBin
                   : type === "Plastic"
+                  ? orangeBin
+                  : type === "Glass"
+                  ? purpleBin
+                  : type === "Carton"
                   ? blueBin
                   : type === "Paper"
-                  ? purpleBin
-                  : type === "Glass"
-                  ? blackBin
+                  ? blueBin
                   : type === "Textile"
                   ? textileBin
                   : orangeBin
