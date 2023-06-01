@@ -55,11 +55,15 @@ const Home = ({ handleResult }) => {
   const uploadPicture = async (form) => {
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:3001/bins/upload", form, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const res = await axios.post(
+        "https://fs-pet-adoption-be-golannnnn.vercel.app/bins/upload",
+        form,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       console.log(res.data.data.results);
       handleResult(res.data.data.results);
     } catch (error) {
