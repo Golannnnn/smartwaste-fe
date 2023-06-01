@@ -1,5 +1,6 @@
 import { Heading, Center, Text, Box } from "@chakra-ui/react";
 import { useEffect } from "react";
+import Border from "./Border";
 
 const types = {
   compost: {
@@ -29,32 +30,37 @@ const Results = ({ result }) => {
   }, []);
 
   return (
-    <Center
-      pt={2}
-      m={5}
-      mx={2}
-      display="flex"
-      flexDirection="column"
-      id="result"
-    >
-      <Heading as="h1" size="2xl" mb={5}>
-        Results
-      </Heading>
-      <Box textAlign="left">
-        <Text>
-          Your waste has been identified as <strong>{type}</strong>.
-        </Text>
+    <>
+      <Center
+        pt={2}
+        m={5}
+        mx={2}
+        display="flex"
+        flexDirection="column"
+        id="result"
+        mt="3rem"
+        mb="4rem"
+      >
+        <Heading as="h1" size="2xl" mb={5}>
+          Results
+        </Heading>
+        <Box textAlign="left">
+          <Text>
+            Your waste has been identified as <strong>{type}</strong>.
+          </Text>
 
-        <Text mt={5}>
-          <strong>How does {type.toLowerCase()} harm the envoirment?</strong>
-        </Text>
-        <Text>{fact}</Text>
-        <Text mt={5}>
-          <strong>Recycling rules in {city}</strong>
-        </Text>
-        <Text>{rule}</Text>
-      </Box>
-    </Center>
+          <Text mt={5}>
+            <strong>How does {type.toLowerCase()} harm the envoirment?</strong>
+          </Text>
+          <Text>{fact}</Text>
+          <Text mt={5}>
+            <strong>Recycling rules in {city}</strong>
+          </Text>
+          <Text>{rule}</Text>
+        </Box>
+      </Center>
+      <Border />
+    </>
   );
 };
 
