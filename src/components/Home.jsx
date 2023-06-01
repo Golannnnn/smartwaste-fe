@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import "../index.css";
 import axios from "axios";
-import TextAnimation from "./TextAnimation";
+
 
 const result = [
   {
@@ -118,7 +118,6 @@ const Home = ({ handleResult }) => {
       <Text px={3} pb={5} fontSize="lg">
         Join the recycling revolution with SmartWaste and make a positive impact
         on your environment and future.
-        <TextAnimation />
       </Text>
       
       <span id="upload"></span>
