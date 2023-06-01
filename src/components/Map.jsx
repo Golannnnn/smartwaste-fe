@@ -2,6 +2,7 @@ import { GoogleMap, LoadScript, MarkerF } from "@react-google-maps/api";
 import { Center, Heading } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import myLocationIcon from "../assets/dot.svg";
+import Border from "./Border";
 const Map = ({ result }) => {
   const [myLocation, setMyLocation] = useState({
     // tel aviv is the default location
@@ -38,21 +39,36 @@ const Map = ({ result }) => {
     });
 
   return (
-    <Center pt={3} m={5} mx={1} display="flex" flexDirection="column">
-      <Heading as="h1" size="2xl" mb={7}>
-        Map
-      </Heading>
-      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_KEY}>
-        <GoogleMap mapContainerStyle={mapStyles} zoom={10} center={myLocation}>
-          <MarkerF position={myLocation} icon={myLocationIcon} />
-          {binLocations &&
-            binLocations.map((bin) => {
-              return <MarkerF position={bin} />;
-            })}
-          {/* <MarkerF position={binLocation} /> */}
-        </GoogleMap>
-      </LoadScript>
-    </Center>
+    <>
+      <Center
+        pt={3}
+        m={5}
+        mx={1}
+        display="flex"
+        flexDirection="column"
+        mt="3rem"
+        mb="5rem"
+      >
+        <Heading as="h1" size="2xl" mb={7}>
+          Map
+        </Heading>
+        <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_KEY}>
+          <GoogleMap
+            mapContainerStyle={mapStyles}
+            zoom={10}
+            center={myLocation}
+          >
+            <MarkerF position={myLocation} icon={myLocationIcon} />
+            {binLocations &&
+              binLocations.map((bin) => {
+                return <MarkerF position={bin} />;
+              })}
+            {/* <MarkerF position={binLocation} /> */}
+          </GoogleMap>
+        </LoadScript>
+      </Center>
+      <Border />
+    </>
   );
 };
 
