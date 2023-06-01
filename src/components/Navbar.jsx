@@ -24,7 +24,7 @@ const Navbar = () => {
             }}
           />
         </Flex>
-        <Flex align="center" gap={2} mr={1}>
+        <Flex align="center" gap={2} mr={3}>
           <TbLocationFilled />
           <Text fontSize="sm" fontWeight="bold">
             {city}
