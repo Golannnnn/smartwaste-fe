@@ -1,55 +1,49 @@
 import { Heading, Center, Text, Box } from "@chakra-ui/react";
+import { useEffect } from "react";
 
-const Results = () => {
+const types = {
+  compost: {
+    fact: [
+      "Plastic is a non-renewable resource that takes centuries to decompose. It is estimated that 8 million metric tons of plastic enter the ocean every year.",
+    ],
+    rule: "Plastic bottles and bags should be thrown in the yellow bin.",
+  },
+  plastic: {
+    fact: [
+      "Plastic is a non-renewable resource that takes centuries to decompose. It is estimated that 8 million metric tons of plastic enter the ocean every year.",
+    ],
+    rule: "Plastic bottles and bags should be thrown in the yellow bin.",
+  },
+};
+
+const Results = ({ result }) => {
   const city = "Tel Aviv";
-  const result = "plastic";
-  const explanation =
-    "Plastic is a non-renewable resource that takes centuries to decompose. It is estimated that 8 million metric tons of plastic enter the ocean every year.";
+  const type = result[0].type;
+  const fact = type && types[type.toLowerCase()].fact[0];
+  const rule = type && types[type.toLowerCase()].rule;
+
+  useEffect(() => {
+    document.getElementById("result").scrollIntoView();
+  }, []);
 
   return (
-    <Center m={5} display="flex" flexDirection="column">
+    <Center m={5} display="flex" flexDirection="column" id="result">
       <Heading as="h1" size="2xl" mb={5}>
         Results
       </Heading>
       <Box textAlign="left">
         <Text>
-          Your picture has been identified as <strong>{result}</strong>.
+          Your picture has been identified as <strong>{type}</strong>.
         </Text>
 
         <Text mt={5}>
-          <strong>How does {result} harm the envoirment?</strong>
+          <strong>How does {type} harm the envoirment?</strong>
         </Text>
-        <Text>{explanation}</Text>
+        <Text>{fact}</Text>
         <Text mt={5}>
           <strong>Recycling rules in {city}</strong>
         </Text>
-        <Text>
-          <strong>1. </strong>
-          Plastic bottles and bags should be thrown in the{" "}
-          <strong
-            style={{
-              backgroundColor: "#FDE047",
-              padding: "0.2rem",
-            }}
-          >
-            yellow
-          </strong>{" "}
-          bin.
-        </Text>
-        <Text>
-          <strong>2. </strong>
-          Plastic containers should be thrown in the{" "}
-          <strong
-            style={{
-              backgroundColor: "#60A5FA",
-              color: "white",
-              padding: "0.2rem",
-            }}
-          >
-            blue
-          </strong>{" "}
-          bin.
-        </Text>
+        <Text>{rule}</Text>
       </Box>
     </Center>
   );

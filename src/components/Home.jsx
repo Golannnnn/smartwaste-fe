@@ -14,7 +14,40 @@ import {
 import "../index.css";
 import axios from "axios";
 
-const Home = () => {
+const result = [
+  {
+    location: {
+      type: "Point",
+      coordinates: [34.795657, 32.124055],
+    },
+    _id: "64776fd80fec14e54da634eb",
+    type: "Compost",
+    street: "Avraham Boyer",
+    number: 1,
+  },
+  {
+    location: {
+      type: "Point",
+      coordinates: [34.792388, 32.119144],
+    },
+    _id: "64776fd80fec14e54da634e1",
+    type: "Compost",
+    street: "Dulchin",
+    number: null,
+  },
+  {
+    location: {
+      type: "Point",
+      coordinates: [34.809182, 32.116853],
+    },
+    _id: "64776fd80fec14e54da634e6",
+    type: "Compost",
+    street: "Hurshat Bon",
+    number: null,
+  },
+];
+
+const Home = ({ handleResult }) => {
   const [loading, setLoading] = useState(false);
   const [file, setFile] = useState(null);
   const [myLocation, setMyLocation] = useState({
@@ -36,6 +69,12 @@ const Home = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (file) {
+      document.getElementById("upload").scrollIntoView();
+    }
+  }, [file]);
+
   const handleUpdate = (e) => {
     e.preventDefault();
 
@@ -48,17 +87,19 @@ const Home = () => {
   const uploadPicture = async (form) => {
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:8080/bins/upload", form, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-      console.log(res);
+      // const res = await axios.post("http://localhost:8080/bins/upload", form, {
+      //   headers: {
+      //     "Content-Type": "multipart/form-data",
+      //   },
+      // });
+      // console.log(res);
+      handleResult(result);
     } catch (error) {
       console.log(error);
     } finally {
       setLoading(false);
       setFile(null);
+      document.getElementById("upload-form").reset();
     }
   };
 
@@ -77,6 +118,7 @@ const Home = () => {
         Join the recycling revolution with SmartWaste and make a positive impact
         on your environment and future.
       </Text>
+      <span id="upload"></span>
       <Box
         bg="#f8f8f2"
         borderRadius="22px"
@@ -98,14 +140,14 @@ const Home = () => {
                 src={file && URL.createObjectURL(file)}
                 alt="pet"
                 borderRadius="md"
-                mt={1}
+                mt={5}
                 w="150px"
                 h="150px"
               />
             </Flex>
           )}
         </Flex>
-        <form>
+        <form id="upload-form">
           <Input
             size="lg"
             type="file"

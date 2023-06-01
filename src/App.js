@@ -5,19 +5,36 @@ import Navbar from "./components/Navbar";
 import Rules from "./components/Rules";
 import About from "./components/About";
 import { Container } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [result, setResult] = useState(null);
+
+  const handleResult = (result) => {
+    setResult(result);
+  };
+
+  useEffect(() => {
+    if (result) {
+      console.log(result);
+    }
+  }, [result]);
+
   return (
     <>
       <div className="green-body">
         <Container maxW="7xl">
           <Navbar />
-          <Home />
+          <Home handleResult={handleResult} result={result} />
         </Container>
       </div>
       <Container maxW="7xl">
-        <Results />
-        <Map />
+        {result && (
+          <>
+            <Results result={result} />
+            <Map result={result} />
+          </>
+        )}
         <Rules />
       </Container>
       <div className="green-body">
