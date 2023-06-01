@@ -3,11 +3,7 @@ import bg from "../assets/about_bg.jpg";
 
 const About = () => {
   return (
-    <Center
-      display="flex"
-      flexDirection="column"
-      alignItems="flex-start"
-    >
+    <Center display="flex" flexDirection="column" alignItems="center" pt={3}>
       <Flex
         align="center"
         justify="center"
@@ -26,7 +22,7 @@ const About = () => {
           bg="linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%)"
           pb={10}
           pt={5}
-          borderRadius="22px"
+          borderRadius="10px"
           m="25px"
         >
           About us
@@ -42,12 +38,19 @@ const About = () => {
           m="25px"
         />
       </Flex>
-      <Text fontSize="2xl" fontWeight="bold" mb={5} mx={5} color="#f8f8f2">
+      <Text
+        fontSize="2xl"
+        fontWeight="bold"
+        mb={5}
+        mx={5}
+        color="#f8f8f2"
+        textAlign="center"
+      >
         "Making the world a cleaner place"
       </Text>
       <Box
         bg="#f8f8f2"
-        borderRadius="22px"
+        borderRadius="10px"
         color="#333"
         maxWidth="100%"
         h="auto"
@@ -76,7 +79,7 @@ const About = () => {
       </Box>
       <Box
         bg="#f8f8f2"
-        borderRadius="22px"
+        borderRadius="10px"
         color="#333"
         maxWidth="100%"
         h="auto"
@@ -106,6 +109,5 @@ const About = () => {
     </Center>
   );
 };
-
 
 export default About;

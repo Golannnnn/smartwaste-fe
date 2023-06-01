@@ -6,7 +6,12 @@ import { TbLocationFilled } from "react-icons/tb";
 const Navbar = () => {
   const city = "Tel Aviv, Israel";
   return (
-    <div id="home">
+    <div
+      id="home"
+      style={{
+        marginLeft: "-7px",
+      }}
+    >
       <Flex bg="#024731" color="#fff" align="center" justify="space-between">
         <Flex align="center">
           <Menu />
@@ -19,7 +24,7 @@ const Navbar = () => {
             }}
           />
         </Flex>
-        <Flex align="center" gap={2} mr={3}>
+        <Flex align="center" gap={2} mr={1}>
           <TbLocationFilled />
           <Text fontSize="sm" fontWeight="bold">
             {city}
