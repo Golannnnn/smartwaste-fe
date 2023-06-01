@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 import Typical from "react-typical";
-import "../index.css"
+import "../index.css";
 
 const TextAnimation = () => {
   return (
-    <div className='textAnimation'>
+    <div className="textAnimation">
       <p>
-        Recycling is {" "}
+        Recycling is{" "}
         <Typical
           loop={Infinity}
           wrapper="b"
@@ -34,6 +34,6 @@ const TextAnimation = () => {
       </p>
     </div>
   );
-}
+};
 
-export default TextAnimation
+export default TextAnimation;
