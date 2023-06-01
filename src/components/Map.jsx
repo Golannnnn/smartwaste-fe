@@ -25,6 +25,7 @@ const Map = ({ result }) => {
   const mapStyles = {
     height: "400px",
     width: "100%",
+    borderRadius: "10px",
   };
 
   const binLocations =
@@ -37,7 +38,7 @@ const Map = ({ result }) => {
     });
 
   return (
-    <Center m={5} display="flex" flexDirection="column">
+    <Center pt={3} m={5} mx={1} display="flex" flexDirection="column">
       <Heading as="h1" size="2xl" mb={7}>
         Map
       </Heading>

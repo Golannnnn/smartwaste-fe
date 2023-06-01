@@ -1,5 +1,13 @@
 import React from "react";
-import { Card, Text, Heading, Stack, Image } from "@chakra-ui/react";
+import {
+  Flex,
+  Card,
+  CardBody,
+  Text,
+  Heading,
+  Stack,
+  Image,
+} from "@chakra-ui/react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import packagingPin from "../assets/packaging_pin.jpg";
@@ -35,39 +43,88 @@ const Rules = () => {
   };
 
   return (
-    <>
-      <Heading display="flex" justifyContent="center" my="2">
+    <div
+      style={{
+        paddingBottom: "30px",
+        position: "relative",
+        marginBottom: "30px",
+      }}
+    >
+      <Heading display="flex" justifyContent="center" my={5} id="rules">
         Rules
       </Heading>
       <Carousel
-        swipeable={true}
-        draggable={true}
-        showDots={true}
-        responsive={responsive}
-        ssr={true}
-        keyBoardControl={true}
-        customTransition="all .10"
-        transitionDuration={500}
+        additionalTransfrom={0}
+        autoPlaySpeed={3000}
+        centerMode={false}
+        className=""
+        containerClass="container"
+        dotListClass=""
+        draggable
+        focusOnSelect={false}
+        infinite
+        itemClass=""
+        keyBoardControl
+        minimumTouchDrag={80}
+        pauseOnHover
+        renderArrowsWhenDisabled={false}
+        renderButtonGroupOutside={false}
+        renderDotsOutside
+        responsive={{
+          desktop: {
+            breakpoint: {
+              max: 3000,
+              min: 1024,
+            },
+            items: 1,
+          },
+          mobile: {
+            breakpoint: {
+              max: 464,
+              min: 0,
+            },
+            items: 1,
+          },
+          tablet: {
+            breakpoint: {
+              max: 1024,
+              min: 464,
+            },
+            items: 1,
+          },
+        }}
+        rewind={false}
+        rewindWithAnimation={false}
+        rtl={false}
+        shouldResetAutoplay
+        showDots
+        sliderClass=""
+        slidesToSlide={1}
+        swipeable
         removeArrowOnDeviceType={[
           "tablet",
           "mobile",
           "desktop",
           "superLargeDesktop",
         ]}
-        dotListClass="custom-dot-list-style"
-        itemClass="carousel-item-padding-50-px"
-        containerClass="carousel-with-custom-dots"
       >
         {/* card 1 */}
         <Card
-          bg="orange"
+          bg="white"
           minHeight="320px"
-          borderRadius="22px"
-          p="15px"
+          borderRadius="10px"
+          border="1px solid #ddd"
+          // p="15px"
           m="10px"
           color="#fff"
         >
-          <Stack direction="row" alignItems="center">
+          <Stack
+            direction="row"
+            alignItems="center"
+            bg="orange"
+            borderTopRadius="10px"
+            padding={3}
+          >
             <Image
               src={packagingPin}
               alt="packagingPin"
@@ -76,15 +133,15 @@ const Rules = () => {
               borderRadius="50%"
             />
             <Heading size="md" pl="13px">
-              Packaging Pin
+              Packaging Bin
             </Heading>
           </Stack>
-          <Text pt="15px">
+          <Text pt="15px" color="black" px={5}>
             <span>Toss:</span> Only discard empty packaging such as plastic,
             metal,beverage cartoon in the orange bin. Do NOT toss any wet waste
             or glass, as they disrupt recycling.
           </Text>
-          <Text pt="15px">
+          <Text pt="15px" color="black" px={5} pb={5}>
             <span>Where to throw:</span> In neighborhoods where orange bins are
             not available, alternative options such as public space recycling
             centers, solar bins, and orange bag separation may be provided.
@@ -92,30 +149,37 @@ const Rules = () => {
         </Card>
         {/* card 2 */}
         <Card
-          bg="purple"
-          minHeight="320px"
-          borderRadius="22px"
-          p="15px"
+          bg="white"
+          minHeight="385px"
+          borderRadius="10px"
+          border="1px solid #ddd"
+          // p="15px"
           m="10px"
           color="#fff"
         >
-          <Stack direction="row" alignItems="center">
+          <Stack
+            direction="row"
+            alignItems="center"
+            bg="purple"
+            borderTopRadius="10px"
+            padding={3}
+          >
             <Image
               src={glassPin}
-              alt="packagingPin"
+              alt="glassPin"
               objectFit="cover"
               boxSize="45px"
               borderRadius="50%"
             />
             <Heading size="md" pl="13px">
-              Glass Pin
+              Glass Bin
             </Heading>
           </Stack>
-          <Text pt="15px">
+          <Text pt="15px" color="black" px={5}>
             <span>Toss:</span> Only EMPTY glass packaging such as bottles and
             jars WITHOUT the lid. Baby food jars should be discarded separately.
           </Text>
-          <Text pt="15px">
+          <Text pt="15px" color="black" px={5} pb={5}>
             <span>Where to throw:</span> In purple bins. It is crucial to
             separate glass into the dedicated bin as mixing it with other waste
             makes sorting difficult.
@@ -123,130 +187,156 @@ const Rules = () => {
         </Card>
         {/* card 3 */}
         <Card
-          bg="#0f52ba"
-          minHeight="320px"
-          borderRadius="22px"
-          p="15px"
+          bg="white"
+          minHeight="385px"
+          borderRadius="10px"
+          border="1px solid #ddd"
+          // p="15px"
           m="10px"
           color="#fff"
         >
-          <Stack direction="row" alignItems="center">
+          <Stack
+            direction="row"
+            alignItems="center"
+            bg="#0f52ba"
+            borderTopRadius="10px"
+            padding={3}
+          >
             <Image
               src={paperPin}
-              alt="packagingPin"
+              alt="paperPin"
               objectFit="cover"
               boxSize="45px"
               borderRadius="50%"
             />
             <Heading size="md" pl="13px">
-              Paper, newspaper and thin cardboard Pin
+              Paper, newspaper and thin cardboard bin
             </Heading>
           </Stack>
-          <Text pt="15px">
+          <Text pt="15px" color="black" px={5}>
             <span>Toss:</span> newspaper, books, cereal boxes, pamphlets, egg
             cartons. Do NOT toss milk cartons as cardboard, they should be
             discarded in the orange packaging bin for recycling.
           </Text>
-          <Text pt="15px">
+          <Text pt="15px" color="black" px={5} pb={5}>
             <span>Where to throw:</span> In the blue bin.
           </Text>
         </Card>
         {/* card 4 */}
         <Card
-          bg="#2CA555"
-          minHeight="320px"
-          borderRadius="22px"
-          p="15px"
+          bg="white"
+          minHeight="385px"
+          borderRadius="10px"
+          border="1px solid #ddd"
+          // p="15px"
           m="10px"
           color="#fff"
         >
-          <Stack direction="row" alignItems="center">
+          <Stack
+            direction="row"
+            alignItems="center"
+            bg="#2CA555"
+            borderTopRadius="10px"
+            padding={3}
+          >
             <Image
               src={organicPin}
-              alt="packagingPin"
+              alt="organicPin"
               objectFit="cover"
               boxSize="45px"
               borderRadius="50%"
             />
             <Heading size="md" pl="13px">
-              Organic Pin/Composter
+              Organic bin/composter
             </Heading>
           </Stack>
-          <Text pt="15px">
-            A composter is a facility where organic waste is deposited to
-            undergo a controlled process of turning it into fertilizer.
+          <Text pt="15px" color="black" px={5}>
+            <span>Toss:</span> a composter is a facility where organic waste is
+            deposited to undergo a controlled process of turning it into
+            fertilizer.
           </Text>
-          <Text pt="15px">
-            The composter is a closed but ventilated container that ensures an
-            optimal composting process and prevents unpleasant odors and
-            improper use.
+          <Text pt="15px" color="black" px={5} pb={5}>
+            <span>Where to throw:</span> the composter is a closed but
+            ventilated container that ensures an optimal composting process and
+            prevents unpleasant odors and improper use.
           </Text>
         </Card>
         {/* card 5 */}
         <Card
-          bg="#2e5894"
-          minHeight="320px"
-          borderRadius="22px"
-          p="15px"
+          bg="white"
+          minHeight="385px"
+          borderRadius="10px"
+          border="1px solid #ddd"
+          // p="15px"
           m="10px"
           color="#fff"
         >
-          <Stack direction="row" alignItems="center">
+          <Stack
+            direction="row"
+            alignItems="center"
+            bg="#2e5894"
+            borderTopRadius="10px"
+            padding={3}
+          >
             <Image
               src={textilesPin}
-              alt="packagingPin"
+              alt="textiles bin"
               objectFit="cover"
               boxSize="45px"
               borderRadius="50%"
             />
             <Heading size="md" pl="13px">
-              Textiles Pin
+              Textiles bin
             </Heading>
           </Stack>
-          <Text pt="15px">
+          <Text pt="15px" color="black" px={5}>
             <span>Toss:</span> old clothes, shoes, bedding, and bags.
           </Text>
-          <Text pt="15px">
-            <span>Where to throw:</span> In the blue and grey recycling textiles
+          <Text pt="15px" color="black" px={5} pb={5}>
+            <span>Where to throw:</span> in the blue and grey recycling textiles
             bins for.
           </Text>
         </Card>
         {/* card 6 */}
         <Card
-          bg="#9BA4B5"
-          minHeight="320px"
-          borderRadius="22px"
-          p="15px"
+          bg="white"
+          minHeight="385px"
+          borderRadius="10px"
+          border="1px solid #ddd"
+          // p="15px"
           m="10px"
           color="#fff"
         >
-          <Stack direction="row" alignItems="center">
+          <Stack
+            direction="row"
+            alignItems="center"
+            //very dark grey color
+            bg="#202020"
+            borderTopRadius="10px"
+            padding={3}
+          >
             <Image
               src={electronicPin}
-              alt="packagingPin"
+              alt="electronicPin"
               objectFit="cover"
               boxSize="45px"
               borderRadius="50%"
             />
             <Heading size="md" pl="13px">
-              Electronic Pin
+              Electronic Bin
             </Heading>
           </Stack>
-          <Text pt="15px">
-            <span>Toss:</span> Batteries and electronic devices such as cables,
+          <Text pt="15px" color="black" px={5}>
+            <span>Toss:</span> batteries and electronic devices such as cables,
             chargers, telephones, watches, lamps, and electric toys.
           </Text>
-          <Text pt="15px">
-            <span>Where to throw:</span> 1. The town halls and community
-            centers. Operating hours are specified.
-          </Text>
-          <Text>
-            2. The reseller is obligated to accept the old product for recycling
-            at no additional cost.
+          <Text pt="15px" color="black" px={5} pb={5}>
+            <span>Where to throw:</span> the town halls and community centers.
+            Operating hours are specified.
           </Text>
         </Card>
       </Carousel>
-    </>
+    </div>
   );
 };
 

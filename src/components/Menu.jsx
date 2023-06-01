@@ -55,7 +55,7 @@ const Menu = () => {
                   height: "30px",
                 }}
               />
-              <Link href="#home">
+              <Link href="#home" onClick={onClose}>
                 <Text fontWeight={600}>Upload</Text>
               </Link>
             </Flex>
@@ -66,7 +66,7 @@ const Menu = () => {
                   height: "30px",
                 }}
               />
-              <Link href="#rules">
+              <Link href="#rules" onClick={onClose}>
                 <Text fontWeight={600}>Rules</Text>
               </Link>
             </Flex>

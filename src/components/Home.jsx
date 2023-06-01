@@ -109,24 +109,24 @@ const Home = ({ handleResult }) => {
       flexDirection="column"
       bg="#024731"
       color="#fff"
-      pb={5}
+      pb={10}
     >
-      <Heading px={5} py={5}>
+      <Heading px={3} py={5}>
         Upload, Learn, Locate, Recycle.
       </Heading>
-      <Text px={5} pb={5} fontSize="lg">
+      <Text px={3} pb={5} fontSize="lg">
         Join the recycling revolution with SmartWaste and make a positive impact
         on your environment and future.
       </Text>
       <span id="upload"></span>
       <Box
         bg="#f8f8f2"
-        borderRadius="22px"
+        borderRadius="10px"
         color="#333"
         maxWidth="500px"
         h="auto"
         p="15px"
-        m="15px"
+        m="10px"
         textAlign="left"
       >
         <Flex px={2} flexDirection="column" pb={5}>

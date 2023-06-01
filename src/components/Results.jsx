@@ -23,21 +23,30 @@ const Results = ({ result }) => {
   const rule = type && types[type.toLowerCase()].rule;
 
   useEffect(() => {
-    document.getElementById("result").scrollIntoView();
+    if (result) {
+      document.getElementById("result").scrollIntoView();
+    }
   }, []);
 
   return (
-    <Center m={5} display="flex" flexDirection="column" id="result">
+    <Center
+      pt={2}
+      m={5}
+      mx={2}
+      display="flex"
+      flexDirection="column"
+      id="result"
+    >
       <Heading as="h1" size="2xl" mb={5}>
         Results
       </Heading>
       <Box textAlign="left">
         <Text>
-          Your picture has been identified as <strong>{type}</strong>.
+          Your waste has been identified as <strong>{type}</strong>.
         </Text>
 
         <Text mt={5}>
-          <strong>How does {type} harm the envoirment?</strong>
+          <strong>How does {type.toLowerCase()} harm the envoirment?</strong>
         </Text>
         <Text>{fact}</Text>
         <Text mt={5}>
