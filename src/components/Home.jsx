@@ -15,39 +15,6 @@ import "../index.css";
 import axios from "axios";
 import TextAnimation from "./TextAnimation";
 
-const result = [
-  {
-    location: {
-      type: "Point",
-      coordinates: [34.795657, 32.124055],
-    },
-    _id: "64776fd80fec14e54da634eb",
-    type: "Compost",
-    street: "Avraham Boyer",
-    number: 1,
-  },
-  {
-    location: {
-      type: "Point",
-      coordinates: [34.792388, 32.119144],
-    },
-    _id: "64776fd80fec14e54da634e1",
-    type: "Compost",
-    street: "Dulchin",
-    number: null,
-  },
-  {
-    location: {
-      type: "Point",
-      coordinates: [34.809182, 32.116853],
-    },
-    _id: "64776fd80fec14e54da634e6",
-    type: "Compost",
-    street: "Hurshat Bon",
-    number: null,
-  },
-];
-
 const Home = ({ handleResult }) => {
   const [loading, setLoading] = useState(false);
   const [file, setFile] = useState(null);
@@ -88,13 +55,13 @@ const Home = ({ handleResult }) => {
   const uploadPicture = async (form) => {
     setLoading(true);
     try {
-      // const res = await axios.post("http://localhost:8080/bins/upload", form, {
-      //   headers: {
-      //     "Content-Type": "multipart/form-data",
-      //   },
-      // });
-      // console.log(res);
-      handleResult(result);
+      const res = await axios.post("http://localhost:3001/bins/upload", form, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      console.log(res.data.data.results);
+      handleResult(res.data.data.results);
     } catch (error) {
       console.log(error);
     } finally {

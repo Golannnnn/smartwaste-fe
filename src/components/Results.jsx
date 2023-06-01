@@ -21,6 +21,12 @@ const types = {
     ],
     rule: "Plastic bottles and bags should be thrown in the yellow bin.",
   },
+  glass: {
+    fact: [
+      "Glass is 100% recyclable and can be recycled endlessly without loss in quality or purity.",
+    ],
+    rule: "Glass bottles and jars should be thrown in the black bin.",
+  },
 };
 
 const Results = ({ result }) => {
